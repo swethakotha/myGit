@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm("wordsconverter", "Home", FormMethod.Post, new { role = "form" }))
+{
+<div class="jumbotron">
+    <h1>Number to word converter</h1>
+    <p class="lead">Please enter the number: @Html.TextBox("numbox", "", new { @type = "number", @placeholder = "Enter Number", @TabIndex = 1, @maxlength = 9, @ondrop = "return false;" })</p>
+    <p><input type="submit" id="submitForm"  value="Submit" tabindex="2" />
+</p>
+    <p>@Html.Encode(ViewData["ResultVal"])</p>
+</div>
+}
